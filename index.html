@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ahmad Ramadan | Portfolio</title>
+  <style>
+    :root { --bg:#f4f4f4; --ink:#333; --inkLite:#555; --card:#fff; --accent:#333; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--ink);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--accent); color: #fff;
+      padding: 15px; text-align: center; position: sticky; top: 0; z-index: 10;
+    }
+    header h1 { margin: 0 0 8px; font-size: 26px; letter-spacing: .3px; }
+    nav a {
+      color: #fff; margin: 0 12px; text-decoration: none; font-size: 14px;
+      opacity: .9;
+    }
+    nav a:hover { opacity: 1; text-decoration: underline; }
+    section {
+      padding: 40px 20px; max-width: 900px; margin: auto;
+    }
+    h2 { margin-top: 0; }
+    .muted { color: var(--inkLite); }
+    .projects {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background: var(--card); padding: 20px; border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,.08);
+    }
+    .card h3 { margin-top: 0; }
+    .btn {
+      display: inline-block; margin-top: 10px; padding: 8px 12px;
+      background: var(--accent); color: #fff; border-radius: 6px; text-decoration: none;
+      font-size: 14px;
+    }
+    .btn + .btn { margin-left: 8px; }
+    ul.compact { margin: 8px 0 0 18px; padding: 0; }
+    ul.compact li { margin: 6px 0; }
+    .two-col {
+      display: grid; gap: 18px; grid-template-columns: 1fr;
+    }
+    @media (min-width: 720px) { .two-col { grid-template-columns: 1fr 1fr; } }
+    footer {
+      text-align: center; padding: 20px; background: var(--accent); color: #fff; margin-top: 30px;
+    }
+    a { color: #1f4ed8; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ahmad Ramadan</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a Computer Science student with hands-on experience in full-stack web development.
+      Skilled in React, Node.js, Express, PostgreSQL, and modern front-end practices. I’m seeking opportunities
+      to contribute to impactful projects while expanding my technical expertise and building a long-term career in technology.
+    </p>
+    <p class="muted">This portfolio showcases a selection of my work and skills.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>Core</h3>
+        <ul class="compact">
+          <li><strong>Languages:</strong> JavaScript, TypeScript, HTML, CSS, PHP (basic)</li>
+          <li><strong>Frameworks & Libraries:</strong> React, Node.js, Express</li>
+          <li><strong>Databases:</strong> PostgreSQL</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tools & Practices</h3>
+        <ul class="compact">
+          <li>Git, GitHub</li>
+          <li>REST APIs, JSON</li>
+          <li>Responsive Design, Accessibility basics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <p><strong>Lebanese International University</strong> — B.Sc. in Computer Science <em>(2023 – Present)</em></p>
+      <p><strong>Al-Mustafa High School</strong> — Life Science <em>(Graduated 2023)</em></p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="card">
+      <h3>Full-Stack Developer Intern — Touch Company</h3>
+      <p><em>Jul 2025 – Aug 2025</em></p>
+      <ul class="compact">
+        <li>Completed a 2-month internship in 3 weeks, delivering all assigned tasks under a tight schedule.</li>
+        <li>Built a social media app (React, Node.js, Express, PostgreSQL) with authentication, posts, likes, stories, shares, and comments.</li>
+        <li>Strengthened problem-solving, adaptability, and fast-learning in a professional environment.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Contact Center Representative — Touch, Beirut</h3>
+      <p><em>Feb 2024 – May 2024 & Oct 2024 – Mar 2025</em></p>
+      <ul class="compact">
+        <li>Assisted customers with inquiries, product information, and service support.</li>
+        <li>Developed expertise in company products/services for accurate, efficient resolutions.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Other Work Experience — Beirut</h3>
+      <p><em>2023 – 2025</em></p>
+      <ul class="compact">
+        <li>Customer service & hospitality roles (barista, waiter, runner, kitchen assistant).</li>
+        <li>Built strong communication, teamwork, and multitasking skills under pressure.</li>
+        <li>Recognized for reliability, work ethic, and process improvements (e.g., Excel cost management system).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Restaurant Menu</h3>
+        <p>A responsive online menu with QR support.</p>
+        <a href="https://github.com/yourname/restaurant-menu" target="_blank" class="btn">GitHub</a>
+        <a href="https://yourprojectlink.com" target="_blank" class="btn">Live Demo</a>
+      </div>
+      <div class="card">
+        <h3>Todo App</h3>
+        <p>A simple task manager with add/remove functionality.</p>
+        <a href="https://github.com/yourname/todo-app" target="_blank" class="btn">GitHub</a>
+        <a href="https://yourprojectlink.com" target="_blank" class="btn">Live Demo</a>
+      </div>
+      <div class="card">
+        <h3>Weather App</h3>
+        <p>Search city weather via API and display live data.</p>
+        <a href="https://github.com/yourname/weather-app" target="_blank" class="btn">GitHub</a>
+        <a href="https://yourprojectlink.com" target="_blank" class="btn">Live Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourname" target="_blank">github.com/yourname</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahhmad-ramadan" target="_blank">linkedin.com/in/ahhmad-ramadan</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Ahmad Ramadan. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
