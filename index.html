@@ -1,412 +1,457 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ahmad Ramadan | Portfolio</title>
-  <meta name="description" content="Portfolio of Ahmad Ramadan – Full‑stack developer (React, Node.js, Express, PostgreSQL). Projects, experience, and contact." />
-  <meta name="theme-color" content="#0f172a" />
-  <meta property="og:title" content="Ahmad Ramadan | Portfolio" />
-  <meta property="og:description" content="Full‑stack developer portfolio. Projects, experience, and contact." />
+  <title>Ahmad Ramadan — Websites for Restaurants & Local Businesses</title>
+  <meta name="description" content="I build fast, modern, bilingual (Arabic/English) websites for restaurants, cafés and local businesses in Lebanon and the Gulf. Book a free call." />
+  <meta name="theme-color" content="#1c3d6e" />
+  <meta property="og:title" content="Ahmad Ramadan — Web Developer for Local Businesses" />
+  <meta property="og:description" content="Fast, modern, bilingual websites that turn followers into paying customers." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-
-    :root {
-      --bg: #0b1020;         
-      --bg-soft: #0f172a;    
-      --card: #111827;      
-      --ink: #e5e7eb;      
-      --ink-dim: #a7b0c0;    
-      --line: #1f2937;       
-     --accent: #6ee7ff;
-      --accent-2: #7c3aed;    
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-      --radius-sm: 10px;
-      --maxw: 1120px;
+    :root{
+      --paper:#f5f6f9;
+      --paper-2:#e9edf3;
+      --ink:#101728;
+      --muted:#586173;
+      --brand:#1c3d6e;       /* deep navy */
+      --brand-ink:#142c50;
+      --sand:#e3e9f1;
+      --line:#dde3ec;
+      --card:#ffffff;
+      --shadow:0 14px 40px rgba(16,24,40,.08);
+      --radius:18px;
+      --maxw:1080px;
     }
-
-    
-    .theme-light {
-      --bg: #f6f7fb;
-      --bg-soft: #ffffff;
-      --card: #ffffff;
-      --ink: #0b1020;
-      --ink-dim: #5b6475;
-      --line: #e6e8ee;
-      --accent: #2563eb;
-      --accent-2: #22c55e;
-      --shadow: 0 12px 30px rgba(16,24,40,.08);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--paper);color:var(--ink);
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-weight:450;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
     }
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+    h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.08;margin:0}
+    p{margin:0}
+    a{color:inherit;text-decoration:none}
+    .muted{color:var(--muted)}
+    .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brand)}
 
- 
-    * { box-sizing: border-box }
-    html { scroll-behavior: smooth }
-    body {
-      margin: 0;
-      background: radial-gradient(1000px 600px at 10% -10%, rgba(124,58,237,.35), transparent 45%),
-                  radial-gradient(800px 500px at 90% -20%, rgba(45,212,191,.25), transparent 50%),
-                  var(--bg);
-      color: var(--ink);
-      font: 500 16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    }
-    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px }
-    .section { padding: 80px 0 }
-    .muted { color: var(--ink-dim) }
-    a { color: var(--accent); text-decoration: none }
-    a:hover { text-decoration: underline }
-    .btn { display:inline-flex;
-       align-items:center;
-        gap:.5rem; 
-        border:1px solid var(--line); 
-        background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.04)); color:var(--ink); padding:10px 14px; border-radius:12px; text-decoration:none; box-shadow: var(--shadow); transition: transform .08s ease; }
-    .btn:hover { transform: translateY(-1px) }
-    .btn.primary { background:linear-gradient(180deg, var(--accent), var(--accent-2)); color:white; border-color:transparent }
-    .chip { display:inline-block; border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:13px; color:var(--ink); background:rgba(255,255,255,.02) }
-    .grid { display:grid; gap:22px }
-    @media (min-width: 720px){ .grid.cols-2{ grid-template-columns:1fr 1fr } .grid.cols-3{ grid-template-columns: repeat(3, 1fr) } }
+    /* buttons */
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:13px 22px;border-radius:999px;
+      font-weight:600;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:transform .1s ease,background .2s ease,box-shadow .2s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 22px rgba(28,61,110,.30)}
+    .btn-primary:hover{background:var(--brand-ink)}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+    .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+    .btn-sm{padding:9px 16px;font-size:.85rem}
+    .chip{display:inline-block;padding:5px 11px;border-radius:999px;background:var(--paper-2);
+      border:1px solid var(--line);font-size:.78rem;font-weight:500;color:var(--muted)}
 
+    :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
 
-    .header { position:sticky; top:0; z-index:50; backdrop-filter: blur(8px); border-bottom:1px solid var(--line); background: color-mix(in oklab, var(--bg) 85%, transparent) }
-    .nav { display:flex; align-items:center; justify-content:space-between; height:64px }
-    .brand { display:flex; align-items:center; gap:10px }
-    .logo { width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow) }
-    .brand h1 { font-size:16px; margin:0; letter-spacing:.3px }
-    .links { display:flex; gap:16px; align-items:center }
-    .links a { color:var(--ink); opacity:.85; font-size:14px }
-    .links a:hover { opacity:1 }
-    .hamb { display:none }
-    @media (max-width: 720px){ .links { display:none } .hamb { display:flex; align-items:center; gap:10px } }
+    /* header */
+    .header{position:sticky;top:0;z-index:60;background:color-mix(in oklab,var(--paper) 88%,transparent);
+      backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:700}
+    .logo{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--brand);
+      color:#fff;font-family:"Fraunces",serif;font-weight:600;font-size:1rem}
+    .brand-name{font-family:"Fraunces",serif;font-size:1.05rem}
+    .nav-links{display:flex;align-items:center;gap:26px}
+    .nav-links a{font-size:.92rem;font-weight:500;color:var(--muted)}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .lang-toggle{background:transparent;border:1px solid var(--line);border-radius:999px;
+      padding:7px 13px;font-weight:600;font-size:.8rem;cursor:pointer;color:var(--ink)}
+    .lang-toggle:hover{border-color:var(--brand);color:var(--brand)}
+    @media(max-width:820px){ .nav-links{display:none} }
 
-    .mnav { position:fixed; inset:64px 0 auto 0; background:var(--bg-soft); border-bottom:1px solid var(--line); display:none }
-    .mnav.open { display:block }
-    .mnav a { display:block; padding:14px 20px; color:var(--ink); border-top:1px solid var(--line) }
+    /* hero */
+    .hero{padding:90px 0 60px;position:relative;overflow:hidden}
+    .hero::after{content:"";position:absolute;right:-160px;top:-120px;width:420px;height:420px;border-radius:50%;
+      background:radial-gradient(circle at center,rgba(28,61,110,.10),transparent 70%);pointer-events:none}
+    .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);max-width:14ch;letter-spacing:-.01em}
+    .hero .accent{color:var(--brand)}
+    .hero p.sub{font-size:clamp(1.05rem,2.4vw,1.25rem);color:var(--muted);max-width:54ch;margin-top:20px}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .proof{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+    .proof span{font-size:.9rem;font-weight:500;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+    .proof span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand)}
 
-    
-    .hero { padding: 96px 0 60px }
-    .hero h2 { font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin: 0 0 14px }
-    .hero p { font-size: clamp(16px, 2.3vw, 18px); margin: 0 0 20px }
-    .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px }
+    /* sections */
+    section{padding:70px 0}
+    .sec-head{max-width:60ch;margin-bottom:42px}
+    .sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-top:10px}
+    .sec-head p{color:var(--muted);margin-top:12px}
 
-    
-    .card { background: var(--card); border:1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow) }
-    .card h3 { margin: 0 0 8px; font-size: 18px }
+    .alt{background:var(--paper-2)}
 
-    
-    .timeline { position:relative; padding-left:26px }
-    .timeline::before { content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background:linear-gradient(180deg, var(--accent), transparent) }
-    .t-item { position:relative; padding: 8px 0 18px }
-    .t-item::marker { content:"" }
-    
-    .t-role { font-weight:700 }
-    .t-time { color:var(--ink-dim); font-size: 14px }
+    /* services */
+    .cards{display:grid;gap:20px;grid-template-columns:1fr}
+    @media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+    .card h3{font-size:1.3rem}
+    .card .card-num{font-family:"Fraunces",serif;color:var(--brand);font-size:1rem;font-weight:600}
+    .card p{color:var(--muted);font-size:.97rem;flex:1}
+    .card .btn{align-self:flex-start;margin-top:6px}
+    .price-note{margin-top:26px;color:var(--muted);font-size:.95rem}
 
-   
-    .proj { display:grid; gap:18px; grid-template-columns:1fr }
-    @media (min-width: 860px) { .proj { grid-template-columns: repeat(3, 1fr) } }
-    .p-card .p-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px }
-    .p-title { font-weight:700; font-size: 17px }
-    .p-links { display:flex; gap:8px }
+    /* work */
+    .work{display:grid;gap:22px}
+    .project{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;box-shadow:var(--shadow);display:grid;gap:14px}
+    @media(min-width:760px){.project{grid-template-columns:1fr 1.3fr;gap:34px;align-items:center;padding:34px}}
+    .project .p-flag{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+    .project h3{font-size:1.7rem;margin-top:6px}
+    .project .p-body p{color:var(--muted);margin-top:10px}
+    .project .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .project .p-links{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+    .more-link{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-weight:600;color:var(--brand)}
+    .more-link:hover{gap:12px}
 
-    
-    footer { border-top:1px solid var(--line); padding:28px 0; text-align:center; color:var(--ink-dim) }
+    /* process */
+    .steps{display:grid;gap:18px;grid-template-columns:1fr;counter-reset:step}
+    @media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+    .step{padding:24px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line)}
+    .step .n{font-family:"Fraunces",serif;font-size:1.6rem;color:var(--brand);font-weight:600}
+    .step h3{font-size:1.15rem;margin:10px 0 6px}
+    .step p{color:var(--muted);font-size:.92rem}
 
-    
-    .skip { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
-    .skip:focus { position:static; width:auto; height:auto; background:var(--accent); color:#000; padding:8px 10px; border-radius:8px }
+    /* about */
+    .about-grid{display:grid;gap:30px;grid-template-columns:1fr}
+    @media(min-width:820px){.about-grid{grid-template-columns:1.4fr 1fr;align-items:start}}
+    .about p+p{margin-top:16px}
+    .about p{color:var(--muted)}
+    .about .lead{color:var(--ink);font-size:1.15rem}
+    .facts{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .facts h3{font-size:1.05rem;margin-bottom:14px;font-family:"Inter";font-weight:700}
+    .facts ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+    .facts li{display:flex;gap:10px;font-size:.95rem}
+    .facts li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:6px;
+      background:var(--brand);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat;
+      mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat}
 
+    /* contact */
+    .contact{background:var(--brand);color:#fff;border-radius:26px;padding:48px 30px;text-align:center;box-shadow:var(--shadow)}
+    .contact h2{font-size:clamp(1.9rem,4vw,2.7rem);color:#fff}
+    .contact p{color:rgba(255,255,255,.82);margin-top:12px;max-width:46ch;margin-left:auto;margin-right:auto}
+    .contact .btn-primary{background:#fff;color:var(--brand);box-shadow:none}
+    .contact .btn-primary:hover{background:var(--paper)}
+    .contact .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+    .contact .btn-ghost:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.08)}
+    .contact-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+    .contact-meta{margin-top:26px;font-size:.9rem;color:rgba(255,255,255,.75)}
+    .contact-meta a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 
-    @media print { .header, .cta, .mnav { display:none !important } body { background:#fff } .card { box-shadow:none } }
+    footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+    footer a{color:var(--muted)}footer a:hover{color:var(--ink)}
+
+    /* RTL */
+    [dir="rtl"] body,[dir="rtl"]{font-family:"Inter","Segoe UI",Tahoma,sans-serif}
+    [dir="rtl"] .hero h1,[dir="rtl"] .sec-head,[dir="rtl"] .hero p.sub{margin-left:auto}
+    [dir="rtl"] .hero::after{right:auto;left:-160px}
+    [dir="rtl"] .more-link:hover{gap:12px}
+
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-
   <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <h1>Ahmad Ramadan</h1>
-      </div>
-      <nav class="links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        
-        <a href="#contact">Contact</a>
-        <button id="themeToggle" class="btn" title="Toggle theme" aria-label="Toggle light/dark">Theme</button>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Ahmad Ramadan home">
+        <span class="logo">AR</span>
+        <span class="brand-name">Ahmad Ramadan</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work" data-en="Work" data-ar="الأعمال">Work</a>
+        <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+        <a href="#process" data-en="Process" data-ar="آلية العمل">Process</a>
+        <a href="#about" data-en="About" data-ar="عنّي">About</a>
       </nav>
-      <div class="hamb">
-        <button id="menuBtn" class="btn" aria-expanded="false" aria-controls="mnav">Menu</button>
-        <button id="themeToggleSm" class="btn" title="Toggle theme" aria-label="Toggle light/dark">Theme</button>
+      <div class="nav-actions">
+        <button id="langBtn" class="lang-toggle" aria-label="Switch language">عربي</button>
+        <a class="btn btn-primary btn-sm" href="#contact" data-en="Book a call" data-ar="احجز مكالمة">Book a call</a>
       </div>
-    </div>
-    <div id="mnav" class="mnav" role="dialog" aria-modal="false">
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#skills" onclick="closeMenu()">Skills</a>
-      <a href="#education" onclick="closeMenu()">Education</a>
-      <a href="#experience" onclick="closeMenu()">Experience</a>
-      <a href="#projects" onclick="closeMenu()">Projects</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
     </div>
   </header>
 
-  <main id="main">
-   
+  <main id="top">
+    <!-- HERO -->
     <section class="hero">
-      <div class="container">
-        <h2>Full‑Stack Developer focused on <span style="background:linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent">React, Node.js & PostgreSQL</span></h2>
-        <p class="muted">I build fast, accessible web apps end‑to‑end. Explore selected work, internships, and skills below.</p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Get in Touch</a>
-          <a class="btn" href="https://github.com/ahhmadramadan2" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/ahhmad-ramadan" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="wrap">
+        <p class="eyebrow" data-en="Web developer · Lebanon → Gulf" data-ar="مطوّر مواقع · لبنان ← الخليج">Web developer · Lebanon → Gulf</p>
+        <h1 data-html="true"
+            data-en="Websites that turn your followers into <span class='accent'>paying customers</span>."
+            data-ar="مواقع تحوّل متابعينك إلى <span class='accent'>زبائن يدفعون</span>.">
+          Websites that turn your followers into <span class="accent">paying customers</span>.
+        </h1>
+        <p class="sub"
+           data-en="I build fast, modern, bilingual websites for restaurants, cafés and local businesses — designed to look premium and load instantly on mobile."
+           data-ar="أبني مواقع سريعة وعصرية وثنائية اللغة للمطاعم والمقاهي والأعمال المحلية — مصمّمة لتبدو فاخرة وتفتح فورًا على الموبايل.">
+          I build fast, modern, bilingual websites for restaurants, cafés and local businesses — designed to look premium and load instantly on mobile.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact" data-en="Book a free call" data-ar="احجز مكالمة مجانية">Book a free call</a>
+          <a class="btn btn-ghost" href="#work" data-en="See my work" data-ar="شاهد أعمالي">See my work</a>
+        </div>
+        <div class="proof">
+          <span data-en="Full-stack developer" data-ar="مطوّر full-stack">Full-stack developer</span>
+          <span data-en="3 live platforms" data-ar="٣ منصّات حيّة">3 live platforms</span>
+          <span data-en="Bilingual Arabic / English" data-ar="ثنائي اللغة عربي / إنجليزي">Bilingual Arabic / English</span>
+          <span data-en="Mobile-first" data-ar="يركّز على الموبايل">Mobile-first</span>
         </div>
       </div>
     </section>
 
-    
-    <section id="about" class="section">
-      <div class="container grid cols-2">
-        <div>
-          <h2>About Me</h2>
-          <p>I'm a Computer Science student with hands‑on experience in full‑stack web development. Skilled in React, Node.js, Express, PostgreSQL, and modern front‑end practices. I’m seeking opportunities to contribute to impactful projects while expanding my technical expertise and building a long‑term career in technology.</p>
-          <p class="muted">This portfolio showcases a selection of my work and skills.</p>
+    <!-- SERVICES -->
+    <section id="services" class="alt">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow" data-en="What I build" data-ar="ماذا أبني">What I build</p>
+          <h2 data-en="Websites built around one goal: more customers." data-ar="مواقع مبنية لهدف واحد: زبائن أكثر.">Websites built around one goal: more customers.</h2>
+          <p data-en="Pick what fits where you are now — you can always grow later." data-ar="اختر ما يناسب مرحلتك الآن — يمكنك التوسّع لاحقًا دائمًا.">Pick what fits where you are now — you can always grow later.</p>
         </div>
-        <div class="card">
-          <h3 style="margin-bottom:10px">Highlights</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:8px">
-            <span class="chip">React (Vite)</span>
-            <span class="chip">Node.js</span>
-            <span class="chip">Express</span>
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">REST APIs</span>
-            <span class="chip">Git & GitHub</span>
-            <span class="chip">Responsive UI</span>
-            <span class="chip">Accessibility</span>
-          </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-num">01</span>
+            <h3 data-en="Business Website" data-ar="موقع أعمال">Business Website</h3>
+            <p data-en="A 3–5 page bilingual site with your menu or services, gallery, location and one-tap WhatsApp — built to bring in calls and bookings."
+               data-ar="موقع ثنائي اللغة من ٣-٥ صفحات يضمّ المنيو أو خدماتك، معرض صور، الموقع، وزرّ واتساب بضغطة — مصمّم ليجلب اتصالات وحجوزات.">
+               A 3–5 page bilingual site with your menu or services, gallery, location and one-tap WhatsApp — built to bring in calls and bookings.</p>
+            <a class="btn btn-ghost btn-sm" href="#contact" data-en="Request a quote" data-ar="اطلب عرض سعر">Request a quote</a>
+          </article>
+          <article class="card">
+            <span class="card-num">02</span>
+            <h3 data-en="Landing Page / Digital Menu" data-ar="صفحة هبوط / منيو رقمي">Landing Page / Digital Menu</h3>
+            <p data-en="One striking page or a fast, scannable digital menu — perfect for a launch, a campaign, or replacing a blurry PDF menu."
+               data-ar="صفحة واحدة لافتة أو منيو رقمي سريع وواضح — مثالي لإطلاق، أو حملة، أو لاستبدال منيو PDF غير واضح.">
+               One striking page or a fast, scannable digital menu — perfect for a launch, a campaign, or replacing a blurry PDF menu.</p>
+            <a class="btn btn-ghost btn-sm" href="#contact" data-en="Request a quote" data-ar="اطلب عرض سعر">Request a quote</a>
+          </article>
+          <article class="card">
+            <span class="card-num">03</span>
+            <h3 data-en="Web App / Custom Build" data-ar="تطبيق ويب / بناء مخصّص">Web App / Custom Build</h3>
+            <p data-en="Booking systems, dashboards and custom platforms — for when your business needs more than a website. (See Vyntrix below.)"
+               data-ar="أنظمة حجز، لوحات تحكّم، ومنصّات مخصّصة — حين يحتاج عملك أكثر من مجرّد موقع. (شاهد Vyntrix أدناه.)">
+               Booking systems, dashboards and custom platforms — for when your business needs more than a website. (See Vyntrix below.)</p>
+            <a class="btn btn-ghost btn-sm" href="#contact" data-en="Request a quote" data-ar="اطلب عرض سعر">Request a quote</a>
+          </article>
         </div>
+        <p class="price-note"
+           data-en="Projects typically start from $300 and scale with what you need. Book a free call and I’ll give you a clear quote."
+           data-ar="تبدأ المشاريع عادةً من 300$ وتتغيّر حسب احتياجك. احجز مكالمة مجانية وأعطيك عرض سعر واضح.">
+           Projects typically start from $300 and scale with what you need. Book a free call and I’ll give you a clear quote.</p>
       </div>
     </section>
 
-    
-    <section id="skills" class="section" style="padding-top: 30px">
-      <div class="container">
-        <h2>Technical Skills</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>Core</h3>
-            <ul style="margin:10px 0 0 18px">
-              <li><strong>Languages:</strong> JavaScript, TypeScript, HTML, CSS, PHP (basic)</li>
-              <li><strong>Frameworks & Libraries:</strong> React, Node.js, Express</li>
-              <li><strong>Databases:</strong> PostgreSQL</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Tools & Practices</h3>
-            <ul style="margin:10px 0 0 18px">
-              <li>Git, GitHub</li>
-              <li>REST APIs, JSON</li>
-              <li>Responsive Design, Accessibility basics</li>
-            </ul>
-          </div>
+    <!-- WORK -->
+    <section id="work">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow" data-en="Selected work" data-ar="أعمال مختارة">Selected work</p>
+          <h2 data-en="Real, live projects — not screenshots." data-ar="مشاريع حقيقية وحيّة — وليست مجرّد صور.">Real, live projects — not screenshots.</h2>
         </div>
-      </div>
-    </section>
 
-
-    <section id="education" class="section" style="padding-top: 30px">
-      <div class="container">
-        <h2>Education</h2>
-        <div class="card">
-          <p><strong>Lebanese International University</strong> — B.Sc. in Computer Science <em>(2023 – 2026)</em></p>
-          <p><strong>Al‑Mustafa High School</strong> — Life Science <em>(Graduated 2023)</em></p>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="experience" class="section" style="padding-top: 30px">
-      <div class="container">
-        <h2>Professional Experience</h2>
-        <div class="card timeline">
-          <div class="t-item">
-           
-            <div class="t-role">Full‑Stack Developer Intern — Touch Company</div>
-            <div class="t-time">Jul 2025 – Aug 2025</div>
-            <ul style="margin:8px 0 0 18px">
-              <li>Completed a 2‑month internship in 3 weeks, delivering all assigned tasks under a tight schedule.</li>
-              <li>Built a social media app (React, Node.js, Express, PostgreSQL) with authentication, posts, likes, stories, shares, and comments.</li>
-              <li>Strengthened problem‑solving, adaptability, and fast‑learning in a professional environment.</li>
-              <li></li>
-            </ul>
-          </div>
-          <div class="t-item">
-            
-            <div class="t-role">Contact Center Representative — Touch, Beirut</div>
-            <div class="t-time">Feb 2024 – May 2024 & Oct 2024 – Mar 2025</div>
-            <ul style="margin:8px 0 0 18px">
-              <li>Assisted customers with inquiries, product information, and service support.</li>
-              <li>Developed expertise in company products/services for accurate, efficient resolutions.</li>
-              <li>Enhanced My communication skills By discussing the problem and dealing with several types of customers. </li>
-            </ul>
-          </div>
-          <div class="t-item">
-            
-            <div class="t-role">Other Work Experience — Beirut</div>
-            <div class="t-time">2023 – 2025</div>
-            <ul style="margin:8px 0 0 18px">
-              <li>Customer service & hospitality roles (barista, waiter, runner, kitchen assistant).</li>
-              <li>Built strong communication, teamwork, and multitasking skills under pressure.</li>
-              <li>Recognized for reliability, work ethic, and process improvements (e.g., Excel cost management system).</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="projects" class="section" style="padding-top: 30px">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="proj">
-          <article class="card p-card">
+        <div class="work">
+          <!-- Vyntrix -->
+          <article class="project">
             <div class="p-head">
-              <div class="p-title">Elk</div>
-              <div class="p-links">
-                <a class="btn" href="https://github.com/ahhmadramadan2/Elk" target="_blank" rel="noopener">Source</a>
-                <a class="btn" href="https://ahhmadramadan2.github.io/Elk/" target="_blank" rel="noopener">Live</a>
-              </div>
+              <span class="p-flag" data-en="Custom platform" data-ar="منصّة مخصّصة">Custom platform</span>
+              <h3>Vyntrix</h3>
             </div>
-            <p class="muted">Product landing & listing site built with HTML, CSS, and vanilla JS.</p>
-            <div style="display:flex; gap:8px; flex-wrap:wrap">
-              <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+            <div class="p-body">
+              <p data-en="A university job-matching platform that connects students with employers through a 0–100 skill-matching score, with real-time chat and email alerts. Full-stack TypeScript, deployed across Vercel, Render and Supabase."
+                 data-ar="منصّة لمطابقة الوظائف تربط الطلاب بأصحاب العمل عبر نظام تقييم توافق من 0 إلى 100، مع دردشة فورية وإشعارات بريد. مبنية بالكامل بـ TypeScript ومنشورة على Vercel وRender وSupabase.">
+                 A university job-matching platform that connects students with employers through a 0–100 skill-matching score, with real-time chat and email alerts. Full-stack TypeScript, deployed across Vercel, Render and Supabase.</p>
+              <div class="chips">
+                <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node + Express</span>
+                <span class="chip">PostgreSQL</span><span class="chip">Socket.io</span><span class="chip">Prisma</span>
+              </div>
+              <div class="p-links">
+                <a class="btn btn-primary btn-sm" href="https://vyntrix-psi.vercel.app" target="_blank" rel="noopener" data-en="View live" data-ar="شاهد مباشرة">View live</a>
+              </div>
             </div>
           </article>
 
-          <article class="card p-card">
+          <!-- ChefChoice -->
+          <article class="project">
             <div class="p-head">
-              <div class="p-title">Instagram (Full‑Stack)</div>
-              <div class="p-links">
-                <a class="btn" href="https://github.com/ahhmadramadan2/Instagram" target="_blank" rel="noopener">Source</a>
-                <a class="btn" href="https://ahhmadramadan2.github.io/Instagram/" target="_blank" rel="noopener">Live</a>
-              </div>
+              <span class="p-flag" data-en="Restaurant / hospitality" data-ar="مطاعم / ضيافة">Restaurant / hospitality</span>
+              <h3>ChefChoice</h3>
             </div>
-            <p class="muted">React (Vite) frontend with Node.js/Express API, posts, stories, likes, comments, and auth.</p>
-            <div style="display:flex; gap:8px; flex-wrap:wrap">
-              <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span>
+            <div class="p-body">
+              <p data-en="A restaurant ordering experience: browse the menu, filter by diet and price, build a meal, and order — all in a clean, mobile-first interface designed for hungry customers on their phones."
+                 data-ar="تجربة طلب لمطعم: تصفّح المنيو، فلترة حسب النظام الغذائي والسعر، تكوين وجبة، ثم الطلب — بواجهة نظيفة تركّز على الموبايل ومصمّمة للزبائن.">
+                 A restaurant ordering experience: browse the menu, filter by diet and price, build a meal, and order — all in a clean, mobile-first interface designed for hungry customers on their phones.</p>
+              <div class="chips">
+                <span class="chip">React</span><span class="chip">Vite</span><span class="chip">UI / UX</span><span class="chip">Mobile-first</span>
+              </div>
+              <div class="p-links">
+                <a class="btn btn-primary btn-sm" href="https://ahhmadramadan2.github.io/ChefChoice/" target="_blank" rel="noopener" data-en="View live" data-ar="شاهد مباشرة">View live</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/ahhmadramadan2/ChefChoice" target="_blank" rel="noopener" data-en="Source" data-ar="الكود">Source</a>
+              </div>
             </div>
           </article>
 
-          <article class="card p-card">
+          <!-- MD-Cases -->
+          <article class="project">
             <div class="p-head">
-              <div class="p-title">MD-Cases </div>
+              <span class="p-flag" data-en="Local business" data-ar="عمل محلّي">Local business</span>
+              <h3>MD-Cases</h3>
+            </div>
+            <div class="p-body">
+              <p data-en="A clean, simple website built for a local business — straightforward, mobile-friendly and easy to navigate, so customers find what they need in seconds."
+                 data-ar="موقع نظيف وبسيط لعمل محلّي — مباشر، متوافق مع الموبايل، وسهل التصفّح، ليجد الزبون ما يريد خلال ثوانٍ.">
+                 A clean, simple website built for a local business — straightforward, mobile-friendly and easy to navigate, so customers find what they need in seconds.</p>
+              <div class="chips">
+                <span class="chip">React</span><span class="chip">Responsive</span>
+              </div>
               <div class="p-links">
-                <a class="btn" href="https://github.com/ahhmadramadan2/Md-Cases" target="_blank" rel="noopener">Source</a>
-                <a class="btn" href="https://ahhmadramadan2.github.io/Md-Cases/" target="_blank" rel="noopener">Live</a>
+                <a class="btn btn-primary btn-sm" href="https://ahhmadramadan2.github.io/Md-Cases/" target="_blank" rel="noopener" data-en="View live" data-ar="شاهد مباشرة">View live</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/ahhmadramadan2/Md-Cases" target="_blank" rel="noopener" data-en="Source" data-ar="الكود">Source</a>
               </div>
             </div>
-            <p class="muted">Created a simple React project for a Friend's Business </p>
-            <div style="display:flex; gap:8px; flex-wrap:wrap">
-              <span class="chip">React</span><span class="chip">Node.js</span>
-            </div>
           </article>
+        </div>
 
-           <article class="card p-card">
-  <div class="p-head">
-    <div class="p-title">ChefChoice</div>
-    <div class="p-links">
-      <a class="btn" href="https://github.com/ahhmadramadan2/ChefChoice" target="_blank" rel="noopener">Source</a>
-      <a class="btn" href="https://ahhmadramadan2.github.io/ChefChoice/" target="_blank" rel="noopener">Live</a>
-    </div>
-  </div>
+        <a class="more-link" href="https://github.com/ahhmadramadan2" target="_blank" rel="noopener"
+           data-en="More projects and code on GitHub →" data-ar="مشاريع وكود إضافية على GitHub →">More projects and code on GitHub →</a>
+      </div>
+    </section>
 
-  <p class="muted">
-    Restaurant ordering platform with dynamic filtering, cart logic, responsive UI, and structured component architecture.
-  </p>
-
-  <div style="display:flex; gap:8px; flex-wrap:wrap">
-    <span class="chip">React</span>
-    <span class="chip">Vite</span>
-    <span class="chip">JavaScript</span>
-    <span class="chip">UI/UX</span>
-  </div>
-</article>
-
-
-          <article class="card p-card">
-            <div class="p-head">
-              <div class="p-title">Other Projects</div>
-              <div class="p-links">
-                <a class="btn" href="https://github.com/ahhmadramadan2/Projects" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-            <p class="muted">Small utilities & experiments across HTML/CSS/JS/PHP.</p>
-            <div style="display:flex; gap:8px; flex-wrap:wrap">
-              <span class="chip">Frontend</span><span class="chip">PHP (basic)</span><span class="chip">Vanilla JS</span>
-            </div>
-          </article>
+    <!-- PROCESS -->
+    <section id="process" class="alt">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow" data-en="How it works" data-ar="آلية العمل">How it works</p>
+          <h2 data-en="Simple, clear, and no surprises." data-ar="بسيطة، واضحة، وبلا مفاجآت.">Simple, clear, and no surprises.</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="n">1</div>
+            <h3 data-en="Call" data-ar="مكالمة">Call</h3>
+            <p data-en="A free 15-minute call to understand your business and what you want the site to do."
+               data-ar="مكالمة مجانية لـ15 دقيقة لفهم عملك وما تريده من الموقع.">A free 15-minute call to understand your business and what you want the site to do.</p>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <h3 data-en="Plan" data-ar="خطّة">Plan</h3>
+            <p data-en="I send a clear plan, timeline and price. A 50% deposit starts the work."
+               data-ar="أرسل لك خطّة وجدولًا زمنيًا وسعرًا واضحًا. دفعة 50% تبدأ العمل.">I send a clear plan, timeline and price. A 50% deposit starts the work.</p>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <h3 data-en="Build" data-ar="تنفيذ">Build</h3>
+            <p data-en="I design and build your site, sharing a preview link so you see progress as we go."
+               data-ar="أصمّم وأبني موقعك، وأشاركك رابط معاينة لترى التقدّم أولًا بأول.">I design and build your site, sharing a preview link so you see progress as we go.</p>
+          </div>
+          <div class="step">
+            <div class="n">4</div>
+            <h3 data-en="Launch" data-ar="إطلاق">Launch</h3>
+            <p data-en="We go live on your domain, and I show you how everything works."
+               data-ar="ننشر الموقع على نطاقك، وأشرح لك كيف يعمل كلّ شيء.">We go live on your domain, and I show you how everything works.</p>
+          </div>
         </div>
       </div>
     </section>
 
-
-    <section id="contact" class="section" style="padding-top: 30px">
-      <div class="container grid cols-2">
-        <div>
-          <h2>Contact</h2>
-          <p>Phone: <a href="tel:+9613662889">+961 3 662 889</a></p>
-          <p>Email: <a href="mailto:ahhmadramadan@outlook.com">ahhmadramadan@outlook.com</a></p>
-         
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap about">
+        <div class="sec-head" style="margin-bottom:30px">
+          <p class="eyebrow" data-en="About" data-ar="عنّي">About</p>
         </div>
-        <div class="card">
-          <h3 style="margin:0 0 8px">Availability</h3>
-          <p class="muted" style="margin:0">Open to internships and part‑time full‑stack roles. Based in Beirut; comfortable with remote work.</p>
+        <div class="about-grid">
+          <div>
+            <p class="lead" data-en="I’m Ahmad — a Computer Science graduate and full-stack developer based in Beirut."
+               data-ar="أنا أحمد — خرّيج علوم حاسوب ومطوّر full-stack مقيم في بيروت.">I’m Ahmad — a Computer Science graduate and full-stack developer based in Beirut.</p>
+            <p data-en="I’ve built real platforms end-to-end, from a restaurant ordering app to a job-matching system with real-time chat. So when I build your website, it’s coded properly — fast, custom and yours — not a slow, bloated template."
+               data-ar="بنيتُ منصّات حقيقية من الألف إلى الياء، من تطبيق طلب لمطعم إلى نظام مطابقة وظائف بدردشة فورية. لذا حين أبني موقعك، يكون مبرمجًا بإتقان — سريعًا ومخصّصًا وملكك — لا قالبًا بطيئًا ومتضخّمًا.">I’ve built real platforms end-to-end, from a restaurant ordering app to a job-matching system with real-time chat. So when I build your website, it’s coded properly — fast, custom and yours — not a slow, bloated template.</p>
+            <p data-en="I’ve also worked in hospitality, so I understand restaurants and local businesses from the inside. And I build in both Arabic and English — which means your site speaks properly to every customer."
+               data-ar="عملتُ أيضًا في مجال الضيافة، لذا أفهم المطاعم والأعمال المحلية من الداخل. وأبني بالعربية والإنجليزية معًا — أي أنّ موقعك يخاطب كلّ زبون بلغته الصحيحة.">I’ve also worked in hospitality, so I understand restaurants and local businesses from the inside. And I build in both Arabic and English — which means your site speaks properly to every customer.</p>
+          </div>
+          <aside class="facts">
+            <h3 data-en="Why work with me" data-ar="لماذا تعمل معي">Why work with me</h3>
+            <ul>
+              <li data-en="Real code — fast, custom sites, not slow templates" data-ar="كود حقيقي — مواقع سريعة ومخصّصة لا قوالب بطيئة">Real code — fast, custom sites, not slow templates</li>
+              <li data-en="True bilingual Arabic / English sites" data-ar="مواقع ثنائية اللغة فعليًّا عربي / إنجليزي">True bilingual Arabic / English sites</li>
+              <li data-en="I understand hospitality & local business" data-ar="أفهم قطاع الضيافة والأعمال المحلية">I understand hospitality & local business</li>
+              <li data-en="Local, responsive, and I stick around to maintain it" data-ar="محلّي، سريع الاستجابة، وأبقى لصيانة الموقع">Local, responsive, and I stick around to maintain it</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <h2 data-en="Let’s build your website." data-ar="لنبنِ موقعك.">Let’s build your website.</h2>
+          <p data-en="Tell me about your business and I’ll show you what’s possible — free, no pressure."
+             data-ar="أخبرني عن عملك وأريك ما هو ممكن — مجانًا وبلا أي التزام.">Tell me about your business and I’ll show you what’s possible — free, no pressure.</p>
+          <div class="contact-cta">
+            <a class="btn btn-primary" href="https://wa.me/9613662889?text=Hi%20Ahmad%2C%20I%27d%20like%20a%20website%20for%20my%20business" target="_blank" rel="noopener" data-en="Message on WhatsApp" data-ar="راسلني على واتساب">Message on WhatsApp</a>
+            <a class="btn btn-ghost" href="mailto:ahhmadramadan@outlook.com" data-en="Send an email" data-ar="أرسل بريدًا">Send an email</a>
+          </div>
+          <p class="contact-meta">
+            <span data-en="Currently taking on new website projects." data-ar="أستقبل حاليًا مشاريع مواقع جديدة.">Currently taking on new website projects.</span><br>
+            <a href="tel:+9613662889">+961 3 662 889</a> ·
+            <a href="https://www.linkedin.com/in/ahhmad-ramadan" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="https://github.com/ahhmadramadan2" target="_blank" rel="noopener">GitHub</a>
+          </p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="yr"></span> Ahmad Ramadan. </div>
+    <div class="wrap">
+      © <span id="yr"></span> Ahmad Ramadan ·
+      <span data-en="Web developer for restaurants & local businesses" data-ar="مطوّر مواقع للمطاعم والأعمال المحلية">Web developer for restaurants & local businesses</span>
+    </div>
   </footer>
 
   <script>
-    
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-  
-    const root = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    if (stored === 'light') document.body.classList.add('theme-light');
+    // ---- Language toggle (EN <-> AR) ----
+    const langBtn = document.getElementById('langBtn');
+    const htmlEl = document.documentElement;
 
-    function toggleTheme(){
-      document.body.classList.toggle('theme-light');
-      localStorage.setItem('theme', document.body.classList.contains('theme-light') ? 'light' : 'dark');
+    function applyLang(lang){
+      const isAr = lang === 'ar';
+      htmlEl.lang = isAr ? 'ar' : 'en';
+      htmlEl.dir  = isAr ? 'rtl' : 'ltr';
+      langBtn.textContent = isAr ? 'EN' : 'عربي';
+
+      document.querySelectorAll('[data-en]').forEach(function(el){
+        const val = isAr ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        if(val === null) return;
+        if(el.getAttribute('data-html') === 'true'){ el.innerHTML = val; }
+        else { el.textContent = val; }
+      });
+      try{ localStorage.setItem('lang', lang); }catch(e){}
     }
-    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-    document.getElementById('themeToggleSm').addEventListener('click', toggleTheme);
 
-
-    const menuBtn = document.getElementById('menuBtn');
-    const mnav = document.getElementById('mnav');
-    function closeMenu(){ mnav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
-    window.closeMenu = closeMenu;
-    menuBtn.addEventListener('click', () => {
-      const open = mnav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    langBtn.addEventListener('click', function(){
+      applyLang(htmlEl.dir === 'rtl' ? 'en' : 'ar');
     });
 
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.style.scrollBehavior = 'auto';
-    }
+    // restore saved preference
+    try{
+      const saved = localStorage.getItem('lang');
+      if(saved === 'ar') applyLang('ar');
+    }catch(e){}
   </script>
 </body>
 </html>
-
